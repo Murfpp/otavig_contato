@@ -21,6 +21,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.options('/api/entrar-contato', cors());
+
 // Rota para enviar e-mail
 app.post('/api/entrar-contato', async (req, res) => {
     const { nome, email, assunto, mensagem } = req.body;
@@ -61,10 +63,9 @@ app.listen(PORT, () => {
     console.log(`Server está rodando na porta ${PORT}`);
 });
 
-// Acessa a rota '/api/oi' a cada 50 segundos
 setInterval(async () => {
     try {
-        const response = await axios.get(`http://localhost:${PORT}/api/oi`);
+        const response = await axios.get(`https://otavig-contato.onrender.com/api/oi`);
         console.log('Resposta da rota /api/oi:', response.data.message);
     } catch (error) {
         console.error('Erro ao acessar a rota /api/oi:', error.message);
