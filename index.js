@@ -8,9 +8,7 @@ const axios = require('axios');
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
-    host: 'gmail',
-    port: 465,
-    secure: true, // SSL/TLS
+    service: 'gmail', // Use 'gmail' como serviço
     auth: {
         user: process.env.TRANSPORTER_USER,
         pass: process.env.TRANSPORTER_USER_PASS
