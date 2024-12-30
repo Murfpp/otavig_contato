@@ -1,0 +1,29 @@
+{
+  "name": "api-contato",
+  "version": "1.0.0",
+  "description": "API para envio de e-mails e rota periódica com Express.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "email",
+    "nodemailer"
+  ],
+  "author": "Otávio Garcia",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.9.11"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
