@@ -8,7 +8,7 @@ const axios = require('axios');
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+    host: 'gmail',
     port: 465,
     secure: true, // SSL/TLS
     auth: {
