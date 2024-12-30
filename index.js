@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
-const fetch = require('node-fetch');
+const axios = require('axios');
 
 dotenv.config();
 
@@ -62,9 +62,8 @@ app.listen(PORT, () => {
 // Acessa a rota '/api/oi' a cada 50 segundos
 setInterval(async () => {
     try {
-        const response = await fetch(`http://localhost:${PORT}/api/oi`);
-        const data = await response.json();
-        console.log('Resposta da rota /api/oi:', data.message);
+        const response = await axios.get(`http://localhost:${PORT}/api/oi`);
+        console.log('Resposta da rota /api/oi:', response.data.message);
     } catch (error) {
         console.error('Erro ao acessar a rota /api/oi:', error.message);
     }
